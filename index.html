@@ -23,7 +23,7 @@
     <form
       class="brief"
       id="brief-form"
-      action="https://formsubmit.co/zhirkovakatya190517@gmail.com"
+      action="https://formsubmit.co/ajax/zhirkovakatya190517@gmail.com"
       method="POST"
     >
       <input type="hidden" name="_subject" value="Новый бриф на сайт" />
@@ -217,10 +217,17 @@
       </section>
 
       <div class="actions">
-        <button type="submit" class="btn">Отправить бриф</button>
-        <p class="note">После отправки я изучу ответы и предложу созвон.</p>
+        <button type="submit" class="btn" id="submit-btn">Отправить бриф</button>
+        <p class="note" id="form-note">После отправки я изучу ответы и предложу созвон.</p>
+        <p class="status" id="form-status" hidden></p>
       </div>
     </form>
+
+    <div class="success" id="success-screen" hidden>
+      <p class="eyebrow">Done</p>
+      <h2>Бриф отправлен</h2>
+      <p class="lead">Спасибо! Я получила ваши ответы и скоро свяжусь.</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
