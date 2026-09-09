@@ -39,7 +39,7 @@
 
         <label class="field">
           <span>Название компании / проекта</span>
-          <input type="text" name="Название проекта" placeholder="Например: Poker Room GTO" required />
+          <input type="text" name="Название проекта" placeholder="Например: "Разработка сайтов WebDis" required />
         </label>
 
         <label class="field">
@@ -61,12 +61,12 @@
 
         <label class="field">
           <span>Главная цель сайта</span>
-          <textarea name="Главная цель" rows="3" placeholder="Например: записаться на игру, позвонить, написать в Telegram" required></textarea>
+          <textarea name="Главная цель" rows="3" placeholder="Например: записаться, позвонить, написать в Telegram или ознакомиться с товарами/услугами" required></textarea>
         </label>
 
         <label class="field">
           <span>Целевая аудитория</span>
-          <textarea name="Аудитория" rows="3" placeholder="Кто ваши клиенты: возраст, город, уровень знакомства с услугой"></textarea>
+          <textarea name="Аудитория" rows="3" placeholder="Кто ваши клиенты: пол, возраст, город, уровень знакомства с услугой" required></textarea>
         </label>
       </section>
 
@@ -78,24 +78,12 @@
 
         <label class="field">
           <span>Желаемый срок</span>
-          <input type="text" name="Срок" placeholder="Например: к 1 октября / 2–3 недели" />
+          <input type="text" name="Срок" placeholder="Например: к 1 декабря / 2–3 месяца" required/ >
         </label>
 
-        <fieldset class="field">
-          <legend>Бюджет</legend>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="Бюджет" value="до 20 000 ₽" /> до 20 000 ₽</label>
-            <label class="choice"><input type="radio" name="Бюджет" value="20–40 000 ₽" /> 20–40 000 ₽</label>
-            <label class="choice"><input type="radio" name="Бюджет" value="40–60 000 ₽" /> 40–60 000 ₽</label>
-            <label class="choice"><input type="radio" name="Бюджет" value="60–100 000 ₽" /> 60–100 000 ₽</label>
-            <label class="choice"><input type="radio" name="Бюджет" value="от 100 000 ₽" /> от 100 000 ₽</label>
-            <label class="choice"><input type="radio" name="Бюджет" value="свой вариант" /> свой вариант</label>
-          </div>
-        </fieldset>
-
         <label class="field">
-          <span>Если свой вариант бюджета — напишите</span>
-          <input type="text" name="Бюджет свой" placeholder="Например: около 50 000 ₽" />
+          <span>Бюджет</span>
+          <input type="text" name="Бюджет свой" placeholder="Например: около 50 000 ₽" required/>
         </label>
       </section>
 
@@ -107,10 +95,10 @@
 
         <fieldset class="field">
           <legend>Какие страницы / блоки нужны</legend>
-          <div class="choices grid">
+          <div class="choices grid" required>
             <label class="choice"><input type="checkbox" name="Страницы" value="Главная" /> Главная</label>
-            <label class="choice"><input type="checkbox" name="Страницы" value="О клубе / о компании" /> О клубе / о компании</label>
-            <label class="choice"><input type="checkbox" name="Страницы" value="Услуги / форматы" /> Услуги / форматы</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="О компании" /> О компании</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Услуги" /> Услуги </label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Расписание" /> Расписание</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Филиалы / локации" /> Филиалы / локации</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Галерея" /> Галерея</label>
@@ -123,22 +111,27 @@
 
         <label class="field">
           <span>Структура своими словами</span>
-          <textarea name="Структура" rows="4" placeholder="Главная → расписание → филиалы → FAQ → контакты"></textarea>
+          <textarea name="Структура" rows="4" placeholder="Например: Главная → О компании → Услуги → FAQ → Контакты" required></textarea>
         </label>
 
         <label class="field">
-          <span>Референсы</span>
-          <textarea name="Референсы" rows="3" placeholder="Ссылки на сайты, которые нравятся"></textarea>
+          <span>Сайты референсы</span>
+          <textarea name="Референсы" rows="3" placeholder="Ссылки на сайты, которые нравятся, необязательно той же темы" required></textarea>
         </label>
 
         <label class="field">
-          <span>Какие эмоции должен вызывать сайт</span>
-          <input type="text" name="Эмоции" placeholder="Премиально, спокойно, энергично, по-клубному..." />
+          <span>Какие цвета предпочительно использовать в дизайне?</span>
+          <textarea name="Референсы" rows="3" placeholder="Например: белый, черный, красный / зеленый, белый, черный и т.п." required></textarea>
         </label>
 
         <label class="field">
-          <span>Какой контент уже есть</span>
-          <textarea name="Контент" rows="3" placeholder="Логотип, фото, тексты, отзывы, видео"></textarea>
+          <span>Какие эмоции должен вызывать сайт?</span>
+          <input type="text" name="Эмоции" placeholder="Например: премиально, спокойно, энергично, ярко..." required/ >
+        </label>
+
+        <label class="field">
+          <span>Какой контент уже есть?</span>
+          <textarea name="Контент" rows="3" placeholder="Логотип, фото, тексты, отзывы, видео и т.п." required></textarea>
         </label>
       </section>
 
@@ -149,39 +142,32 @@
         </div>
 
         <fieldset class="field">
-          <legend>Что нужно на сайте</legend>
-          <div class="choices grid">
+          <legend>Что нужно на сайте?</legend>
+          <div class="choices grid" required>
             <label class="choice"><input type="checkbox" name="Функционал" value="Форма заявки" /> Форма заявки</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Кнопки мессенджеров" /> Кнопки мессенджеров</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Онлайн-запись" /> Онлайн-запись</label>
-            <label class="choice"><input type="checkbox" name="Функционал" value="Карта проезда" /> Карта проезда</label>
-            <label class="choice"><input type="checkbox" name="Функционал" value="Галерея / слайдер" /> Галерея / слайдер</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Карта (местоположение)" /> Карта (местоположение)</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Галерея" /> Галерея</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Анимации" /> Анимации</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Мультиязычность" /> Мультиязычность (RU/EN)</label>
-            <label class="choice"><input type="checkbox" name="Функционал" value="Обновление расписания без дизайнера" /> Обновление расписания без дизайнера</label>
           </div>
         </fieldset>
 
         <label class="field">
           <span>Языки сайта</span>
-          <input type="text" name="Языки" placeholder="Только русский / русский + английский" />
+          <input type="text" name="Языки" placeholder="Только русский / русский + английский" required/>
         </label>
 
         <fieldset class="field">
           <legend>Уровень анимации</legend>
-          <div class="choices">
+          <div class="choices" required>
             <label class="choice"><input type="radio" name="Анимация" value="Почти без анимации" /> Почти без анимации</label>
             <label class="choice"><input type="radio" name="Анимация" value="Лёгкая" /> Лёгкая</label>
             <label class="choice"><input type="radio" name="Анимация" value="Заметная / сложная" /> Заметная / сложная</label>
             <label class="choice"><input type="radio" name="Анимация" value="На ваш вкус" /> На ваш вкус</label>
           </div>
         </fieldset>
-
-        <label class="field range-field">
-          <span>Уровень дизайна: <strong id="design-value">5</strong> / 10</span>
-          <input type="range" name="Уровень дизайна" min="1" max="10" value="5" id="design-range" />
-          <div class="range-hints"><span>проще</span><span>сложнее</span></div>
-        </label>
       </section>
 
       <section class="card">
@@ -218,7 +204,7 @@
 
       <div class="actions">
         <button type="submit" class="btn" id="submit-btn">Отправить бриф</button>
-        <p class="note" id="form-note">После отправки я изучу ответы и предложу созвон.</p>
+        <p class="note" id="form-note">После отправки я изучу ответы и предложу созвон при необходимости.</p>
         <p class="status" id="form-status" hidden></p>
       </div>
     </form>
