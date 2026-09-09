@@ -8,7 +8,7 @@
 
 ## Отправка на почту
 
-Форма уже настроена на `zhirkovakatya190517@yandex.ru` через FormSubmit.
+Форма уже настроена на `zhirkovakatya190517@gmail.com` через FormSubmit.
 
 При первой отправке подтверди почту письмом от FormSubmit — после этого ответы будут приходить на email.
 
