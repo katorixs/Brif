@@ -18,6 +18,10 @@
       <p class="lead">
         Чем подробнее заполните форму, тем точнее я пойму задачу и смогу дать расчёт стоимости.
       </p>
+      <div class="progress" aria-hidden="true">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="step-label" id="step-label">Шаг 1 из 5 · О проекте</p>
     </header>
 
     <form
@@ -31,7 +35,8 @@
       <input type="hidden" name="_captcha" value="false" />
       <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
 
-      <section class="card">
+      <!-- 01 -->
+      <section class="card step is-active" data-step="0">
         <div class="card-head">
           <span class="num">01</span>
           <h2>О проекте</h2>
@@ -39,38 +44,70 @@
 
         <label class="field">
           <span>Название компании / проекта</span>
-          <input type="text" name="Название проекта" placeholder="Например: Разработка сайтов WebDis" required />
+          <input type="text" name="Название проекта" placeholder="Например: Разработка сайтов WebDis" required data-step-required />
         </label>
 
         <label class="field">
           <span>Тип проекта</span>
-          <select name="Тип проекта" required>
+          <select name="Тип проекта" required data-step-required>
             <option value="" disabled selected>Выберите вариант</option>
             <option>Лендинг / одностраничник</option>
             <option>Многостраничный сайт</option>
             <option>Корпоративный сайт</option>
             <option>Интернет-магазин</option>
             <option>Другое</option>
+            <option>Не знаю, нужна консультация</option>
           </select>
         </label>
 
         <label class="field">
           <span>Кратко опишите проект</span>
-          <textarea name="Описание проекта" rows="4" placeholder="Чем занимаетесь, для кого сайт, что важно показать" required></textarea>
+          <textarea name="Описание проекта" rows="4" placeholder="Чем занимаетесь, для кого сайт, что важно показать" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Почему решили создать или обновить сайт именно сейчас?</span>
+          <textarea name="Почему сейчас" rows="3" placeholder="Например: старый сайт не даёт заявок / открываем новое направление / хотим выглядеть сильнее конкурентов" required data-step-required></textarea>
         </label>
 
         <label class="field">
           <span>Главная цель сайта</span>
-          <textarea name="Главная цель" rows="3" placeholder="Например: записаться, позвонить, написать в Telegram или ознакомиться с товарами/услугами" required></textarea>
+          <textarea name="Главная цель" rows="3" placeholder="Например: больше заявок, продажи, доверие, презентация компании" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Какое основное действие должен совершить пользователь?</span>
+          <textarea name="Главное действие" rows="2" placeholder="Например: записаться, оставить заявку, позвонить, написать в Telegram, купить" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Как поймёте, что сайт получился успешным?</span>
+          <textarea name="Критерий успеха" rows="2" placeholder="Например: 20 заявок в месяц / чаще записываются онлайн" required data-step-required></textarea>
         </label>
 
         <label class="field">
           <span>Целевая аудитория</span>
-          <textarea name="Аудитория" rows="3" placeholder="Кто ваши клиенты: пол, возраст, город, уровень знакомства с услугой" required></textarea>
+          <textarea name="Аудитория" rows="3" placeholder="Кто ваши клиенты: пол, возраст, город, уровень знакомства с услугой" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>С какой задачей пользователь обычно приходит на сайт?</span>
+          <textarea name="Задача пользователя" rows="2" placeholder="Например: понять услуги и цены, записаться, сравнить с конкурентами" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Почему клиент должен выбрать вас, а не конкурента?</span>
+          <textarea name="Почему вы" rows="3" placeholder="Чем отличаетесь: сервис, цена, экспертиза, атмосфера, локация…" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Что может помешать пользователю выбрать вас?</span>
+          <textarea name="Барьеры" rows="2" placeholder="Например: цена, мало информации, нет отзывов, сложная запись, недоверие" required data-step-required></textarea>
         </label>
       </section>
 
-      <section class="card">
+      <!-- 02 -->
+      <section class="card step" data-step="1" hidden>
         <div class="card-head">
           <span class="num">02</span>
           <h2>Сроки и бюджет</h2>
@@ -78,16 +115,42 @@
 
         <label class="field">
           <span>Желаемый срок</span>
-          <input type="text" name="Срок" placeholder="Например: к 1 декабря / 2–3 месяца" required/ >
+          <input type="text" name="Срок" placeholder="Например: к 1 декабря / 2–3 месяца" required data-step-required />
         </label>
 
         <label class="field">
           <span>Бюджет</span>
-          <input type="text" name="Бюджет свой" placeholder="Например: около 50 000 ₽" required/>
+          <input type="text" name="Бюджет" placeholder="Например: около 50 000 ₽" required data-step-required />
+        </label>
+
+        <fieldset class="field">
+          <legend>Есть ли уже сайт?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="Текущий сайт" value="Нет, создаём с нуля" required data-step-required /> Нет, создаём с нуля</label>
+            <label class="choice"><input type="radio" name="Текущий сайт" value="Да, нужен редизайн" /> Да, нужен редизайн</label>
+            <label class="choice"><input type="radio" name="Текущий сайт" value="Да, новый сайт вместо старого" /> Да, новый сайт вместо старого</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Ссылка на текущий сайт (если есть)</span>
+          <input type="text" name="Ссылка на сайт" placeholder="https://" />
+        </label>
+
+        <label class="field">
+          <span>Предпочтительная платформа</span>
+          <select name="Платформа">
+            <option>Не знаю</option>
+            <option>Tilda</option>
+            <option>Webflow</option>
+            <option>WordPress</option>
+            <option>Другая</option>
+          </select>
         </label>
       </section>
 
-      <section class="card">
+      <!-- 03 -->
+      <section class="card step" data-step="2" hidden>
         <div class="card-head">
           <span class="num">03</span>
           <h2>Структура и контент</h2>
@@ -95,10 +158,10 @@
 
         <fieldset class="field">
           <legend>Какие страницы / блоки нужны</legend>
-          <div class="choices grid" required>
+          <div class="choices grid">
             <label class="choice"><input type="checkbox" name="Страницы" value="Главная" /> Главная</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="О компании" /> О компании</label>
-            <label class="choice"><input type="checkbox" name="Страницы" value="Услуги" /> Услуги </label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Услуги" /> Услуги</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Расписание" /> Расписание</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Филиалы / локации" /> Филиалы / локации</label>
             <label class="choice"><input type="checkbox" name="Страницы" value="Галерея" /> Галерея</label>
@@ -111,31 +174,75 @@
 
         <label class="field">
           <span>Структура своими словами</span>
-          <textarea name="Структура" rows="4" placeholder="Например: Главная → О компании → Услуги → FAQ → Контакты" required></textarea>
+          <textarea name="Структура" rows="3" placeholder="Например: Главная → О компании → Услуги → FAQ → Контакты" required data-step-required></textarea>
         </label>
 
         <label class="field">
-          <span>Сайты референсы</span>
-          <textarea name="Референсы" rows="3" placeholder="Ссылки на сайты, которые нравятся, необязательно той же темы" required></textarea>
+          <span>Есть ли обязательная информация на сайте?</span>
+          <textarea name="Обязательная информация" rows="2" placeholder="Сертификаты, лицензии, адреса, условия, гарантии… Можно «нет»"></textarea>
         </label>
 
         <label class="field">
-          <span>Какие цвета предпочительно использовать в дизайне?</span>
-          <textarea name="Цвета" rows="3" placeholder="Например: белый, черный, красный / зеленый, белый, черный и т.п." required></textarea>
+          <span>Конкуренты (2–5 ссылок)</span>
+          <textarea name="Конкуренты" rows="2" placeholder="https://..."></textarea>
+        </label>
+
+        <label class="field">
+          <span>Что нравится / не нравится у конкурентов?</span>
+          <textarea name="Про конкурентов" rows="3" placeholder="Что взять на заметку, а чего точно избегать"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Сайты-референсы</span>
+          <textarea name="Референсы" rows="2" placeholder="Ссылки на сайты, которые нравятся — необязательно той же темы" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Что именно нравится в этих сайтах?</span>
+          <textarea name="Нравится в референсах" rows="2" placeholder="Цвет, шрифты, композиция, фото, анимация, структура, карточки…" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Какие цвета предпочтительно использовать?</span>
+          <textarea name="Цвета да" rows="2" placeholder="Например: белый, чёрный, красный" required data-step-required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Какие цвета нельзя использовать?</span>
+          <textarea name="Цвета нет" rows="2" placeholder="Например: фиолетовый, кислотный. Можно «нет ограничений»" required data-step-required></textarea>
         </label>
 
         <label class="field">
           <span>Какие эмоции должен вызывать сайт?</span>
-          <textarea name="Эмоции" rows="3" placeholder="Например: премиально, спокойно, энергично, ярко..." required/ ></textarea>
+          <textarea name="Эмоции" rows="2" placeholder="Например: премиально, спокойно, энергично, ярко..." required data-step-required></textarea>
         </label>
 
-        <label class="field">
-          <span>Какой контент уже есть?</span>
-          <textarea name="Контент" rows="3" placeholder="Логотип, фото, тексты, отзывы, видео и т.п." required></textarea>
-        </label>
+        <fieldset class="field">
+          <legend>Какой контент уже есть?</legend>
+          <div class="choices grid">
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Логотип" /> Логотип</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Фирменный стиль" /> Фирменный стиль</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Тексты" /> Тексты</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Фото" /> Фото</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Видео" /> Видео</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Отзывы" /> Отзывы</label>
+            <label class="choice"><input type="checkbox" name="Контент есть" value="Ничего" /> Пока ничего</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Что нужно подготовить с моей стороны?</legend>
+          <div class="choices grid">
+            <label class="choice"><input type="checkbox" name="Подготовить" value="Тексты" /> Тексты</label>
+            <label class="choice"><input type="checkbox" name="Подготовить" value="Фото" /> Подбор фото</label>
+            <label class="choice"><input type="checkbox" name="Подготовить" value="Графика" /> Графика / иллюстрации</label>
+            <label class="choice"><input type="checkbox" name="Подготовить" value="Ничего" /> Ничего, всё предоставим</label>
+          </div>
+        </fieldset>
       </section>
 
-      <section class="card">
+      <!-- 04 -->
+      <section class="card step" data-step="3" hidden>
         <div class="card-head">
           <span class="num">04</span>
           <h2>Функционал</h2>
@@ -143,7 +250,7 @@
 
         <fieldset class="field">
           <legend>Что нужно на сайте?</legend>
-          <div class="choices grid" required>
+          <div class="choices grid">
             <label class="choice"><input type="checkbox" name="Функционал" value="Форма заявки" /> Форма заявки</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Кнопки мессенджеров" /> Кнопки мессенджеров</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Онлайн-запись" /> Онлайн-запись</label>
@@ -151,18 +258,32 @@
             <label class="choice"><input type="checkbox" name="Функционал" value="Галерея" /> Галерея</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Анимации" /> Анимации</label>
             <label class="choice"><input type="checkbox" name="Функционал" value="Мультиязычность" /> Мультиязычность (RU/EN)</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Оплата" /> Оплата / корзина</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Калькулятор" /> Калькулятор</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Нужны ли интеграции?</legend>
+          <div class="choices grid">
+            <label class="choice"><input type="checkbox" name="Интеграции" value="Telegram" /> Telegram</label>
+            <label class="choice"><input type="checkbox" name="Интеграции" value="Email" /> Email</label>
+            <label class="choice"><input type="checkbox" name="Интеграции" value="CRM" /> CRM</label>
+            <label class="choice"><input type="checkbox" name="Интеграции" value="Оплата" /> Платёжная система</label>
+            <label class="choice"><input type="checkbox" name="Интеграции" value="Бронирование" /> Бронирование</label>
+            <label class="choice"><input type="checkbox" name="Интеграции" value="Не знаю" /> Не знаю, нужна консультация</label>
           </div>
         </fieldset>
 
         <label class="field">
           <span>Языки сайта</span>
-          <input type="text" name="Языки" placeholder="Только русский / русский + английский" required/>
+          <input type="text" name="Языки" placeholder="Только русский / русский + английский" required data-step-required />
         </label>
 
         <fieldset class="field">
           <legend>Уровень анимации</legend>
-          <div class="choices" required>
-            <label class="choice"><input type="radio" name="Анимация" value="Почти без анимации" /> Почти без анимации</label>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="Анимация" value="Почти без анимации" required data-step-required /> Почти без анимации</label>
             <label class="choice"><input type="radio" name="Анимация" value="Лёгкая" /> Лёгкая</label>
             <label class="choice"><input type="radio" name="Анимация" value="Заметная / сложная" /> Заметная / сложная</label>
             <label class="choice"><input type="radio" name="Анимация" value="На ваш вкус" /> На ваш вкус</label>
@@ -170,7 +291,8 @@
         </fieldset>
       </section>
 
-      <section class="card">
+      <!-- 05 -->
+      <section class="card step" data-step="4" hidden>
         <div class="card-head">
           <span class="num">05</span>
           <h2>Контакты</h2>
@@ -178,12 +300,12 @@
 
         <label class="field">
           <span>Ваше имя</span>
-          <input type="text" name="Имя" placeholder="Как к вам обращаться" required />
+          <input type="text" name="Имя" placeholder="Как к вам обращаться" required data-step-required />
         </label>
 
         <label class="field">
           <span>Telegram / телефон / email</span>
-          <input type="text" name="Контакт" placeholder="@username или +7..." required />
+          <input type="text" name="Контакт" placeholder="@username или +7..." required data-step-required />
         </label>
 
         <label class="field">
@@ -202,11 +324,13 @@
         </label>
       </section>
 
-      <div class="actions">
-        <button type="submit" class="btn" id="submit-btn">Отправить бриф</button>
-        <p class="note" id="form-note">После отправки я изучу ответы и предложу созвон при необходимости.</p>
-        <p class="status" id="form-status" hidden></p>
+      <div class="nav-actions" id="nav-actions">
+        <button type="button" class="btn btn-ghost" id="prev-btn" hidden>Назад</button>
+        <button type="button" class="btn" id="next-btn">Далее</button>
+        <button type="submit" class="btn" id="submit-btn" hidden>Отправить бриф</button>
       </div>
+      <p class="note" id="form-note">После отправки я изучу ответы и предложу созвон при необходимости.</p>
+      <p class="status" id="form-status" hidden></p>
     </form>
 
     <div class="success" id="success-screen" hidden>
