@@ -71,6 +71,21 @@ h1 {
   font-size: 1rem;
 }
 
+help-link {
+  margin: 14px 0 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.help-link a {
+  color: #f4f4f5;
+  text-underline-offset: 3px;
+}
+.help-link a:hover {
+  opacity: 0.85;
+}
+
+
 .progress {
   margin-top: 22px;
   height: 3px;
