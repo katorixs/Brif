@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Бриф на разработку сайта</title>
+  <meta name="description" content="Заполните бриф — так я точнее пойму задачу и смогу дать расчёт стоимости." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="eyebrow">Brief</p>
+      <h1>Бриф на разработку сайта</h1>
+      <p class="lead">
+        Чем подробнее заполните форму, тем точнее я пойму задачу и смогу дать расчёт стоимости.
+      </p>
+    </header>
+
+    <form
+      class="brief"
+      id="brief-form"
+      action="https://formsubmit.co/zhirkovakatya190517@yandex.ru"
+      method="POST"
+    >
+      <input type="hidden" name="_subject" value="Новый бриф на сайт" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="" />
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" />
+
+      <section class="card">
+        <div class="card-head">
+          <span class="num">01</span>
+          <h2>О проекте</h2>
+        </div>
+
+        <label class="field">
+          <span>Название компании / проекта</span>
+          <input type="text" name="Название проекта" placeholder="Например: Poker Room GTO" required />
+        </label>
+
+        <label class="field">
+          <span>Тип проекта</span>
+          <select name="Тип проекта" required>
+            <option value="" disabled selected>Выберите вариант</option>
+            <option>Лендинг / одностраничник</option>
+            <option>Многостраничный сайт</option>
+            <option>Корпоративный сайт</option>
+            <option>Интернет-магазин</option>
+            <option>Другое</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Кратко опишите проект</span>
+          <textarea name="Описание проекта" rows="4" placeholder="Чем занимаетесь, для кого сайт, что важно показать" required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Главная цель сайта</span>
+          <textarea name="Главная цель" rows="3" placeholder="Например: записаться на игру, позвонить, написать в Telegram" required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Целевая аудитория</span>
+          <textarea name="Аудитория" rows="3" placeholder="Кто ваши клиенты: возраст, город, уровень знакомства с услугой"></textarea>
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="num">02</span>
+          <h2>Сроки и бюджет</h2>
+        </div>
+
+        <label class="field">
+          <span>Желаемый срок</span>
+          <input type="text" name="Срок" placeholder="Например: к 1 октября / 2–3 недели" />
+        </label>
+
+        <fieldset class="field">
+          <legend>Бюджет</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="Бюджет" value="до 20 000 ₽" /> до 20 000 ₽</label>
+            <label class="choice"><input type="radio" name="Бюджет" value="20–40 000 ₽" /> 20–40 000 ₽</label>
+            <label class="choice"><input type="radio" name="Бюджет" value="40–60 000 ₽" /> 40–60 000 ₽</label>
+            <label class="choice"><input type="radio" name="Бюджет" value="60–100 000 ₽" /> 60–100 000 ₽</label>
+            <label class="choice"><input type="radio" name="Бюджет" value="от 100 000 ₽" /> от 100 000 ₽</label>
+            <label class="choice"><input type="radio" name="Бюджет" value="свой вариант" /> свой вариант</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Если свой вариант бюджета — напишите</span>
+          <input type="text" name="Бюджет свой" placeholder="Например: около 50 000 ₽" />
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="num">03</span>
+          <h2>Структура и контент</h2>
+        </div>
+
+        <fieldset class="field">
+          <legend>Какие страницы / блоки нужны</legend>
+          <div class="choices grid">
+            <label class="choice"><input type="checkbox" name="Страницы" value="Главная" /> Главная</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="О клубе / о компании" /> О клубе / о компании</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Услуги / форматы" /> Услуги / форматы</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Расписание" /> Расписание</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Филиалы / локации" /> Филиалы / локации</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Галерея" /> Галерея</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Отзывы" /> Отзывы</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="FAQ" /> FAQ</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Контакты / запись" /> Контакты / запись</label>
+            <label class="choice"><input type="checkbox" name="Страницы" value="Другое" /> Другое</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Структура своими словами</span>
+          <textarea name="Структура" rows="4" placeholder="Главная → расписание → филиалы → FAQ → контакты"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Референсы</span>
+          <textarea name="Референсы" rows="3" placeholder="Ссылки на сайты, которые нравятся"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Какие эмоции должен вызывать сайт</span>
+          <input type="text" name="Эмоции" placeholder="Премиально, спокойно, энергично, по-клубному..." />
+        </label>
+
+        <label class="field">
+          <span>Какой контент уже есть</span>
+          <textarea name="Контент" rows="3" placeholder="Логотип, фото, тексты, отзывы, видео"></textarea>
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="num">04</span>
+          <h2>Функционал</h2>
+        </div>
+
+        <fieldset class="field">
+          <legend>Что нужно на сайте</legend>
+          <div class="choices grid">
+            <label class="choice"><input type="checkbox" name="Функционал" value="Форма заявки" /> Форма заявки</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Кнопки мессенджеров" /> Кнопки мессенджеров</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Онлайн-запись" /> Онлайн-запись</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Карта проезда" /> Карта проезда</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Галерея / слайдер" /> Галерея / слайдер</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Анимации" /> Анимации</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Мультиязычность" /> Мультиязычность (RU/EN)</label>
+            <label class="choice"><input type="checkbox" name="Функционал" value="Обновление расписания без дизайнера" /> Обновление расписания без дизайнера</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Языки сайта</span>
+          <input type="text" name="Языки" placeholder="Только русский / русский + английский" />
+        </label>
+
+        <fieldset class="field">
+          <legend>Уровень анимации</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="Анимация" value="Почти без анимации" /> Почти без анимации</label>
+            <label class="choice"><input type="radio" name="Анимация" value="Лёгкая" /> Лёгкая</label>
+            <label class="choice"><input type="radio" name="Анимация" value="Заметная / сложная" /> Заметная / сложная</label>
+            <label class="choice"><input type="radio" name="Анимация" value="На ваш вкус" /> На ваш вкус</label>
+          </div>
+        </fieldset>
+
+        <label class="field range-field">
+          <span>Уровень дизайна: <strong id="design-value">5</strong> / 10</span>
+          <input type="range" name="Уровень дизайна" min="1" max="10" value="5" id="design-range" />
+          <div class="range-hints"><span>проще</span><span>сложнее</span></div>
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <span class="num">05</span>
+          <h2>Контакты</h2>
+        </div>
+
+        <label class="field">
+          <span>Ваше имя</span>
+          <input type="text" name="Имя" placeholder="Как к вам обращаться" required />
+        </label>
+
+        <label class="field">
+          <span>Telegram / телефон / email</span>
+          <input type="text" name="Контакт" placeholder="@username или +7..." required />
+        </label>
+
+        <label class="field">
+          <span>Удобный способ связи</span>
+          <select name="Способ связи">
+            <option>Telegram</option>
+            <option>WhatsApp</option>
+            <option>Телефон</option>
+            <option>Email</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Дополнительно</span>
+          <textarea name="Дополнительно" rows="4" placeholder="Всё, что важно знать заранее"></textarea>
+        </label>
+      </section>
+
+      <div class="actions">
+        <button type="submit" class="btn">Отправить бриф</button>
+        <p class="note">После отправки я изучу ответы и предложу созвон.</p>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
